@@ -1,0 +1,15 @@
+version: "3.8"
+
+services:
+  mongodb_container:
+    image: tutum/mongodb
+
+    ports:
+      - 27017:27017
+
+  genreapp:
+      image: docker-genre
+
+  movieapp:
+      image: docker-movie
+
