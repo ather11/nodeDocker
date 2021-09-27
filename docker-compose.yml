@@ -1,15 +1,21 @@
 version: "3.8"
 
 services:
-  mongodb_container:
-    image: tutum/mongodb
-
-    ports:
-      - 27017:27017
-
+  mongo:
+      image: mongo
+      ports:
+        - 27017:27017
   genreapp:
-      image: docker-genre
-
+    image: genreimg
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    ports:
+      - 3000:3000
   movieapp:
-      image: docker-movie
+    image: movieimg
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    ports:
+      - 3001:3001
+
 

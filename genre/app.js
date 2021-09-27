@@ -16,7 +16,7 @@ app.use('/api', routes)
 
 var mongoDB = process.env.MONGODB;
 
-mongoose.connect(mongoDB, {
+mongoose.connect('mongodb://localhost:27017/netflix_genre', {
     useNewUrlParser: true
 }).then(() => {
     console.log("Successfully connected to the database");
